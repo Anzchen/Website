@@ -1,11 +1,3 @@
-@media screen and (max-width: 600px) {
-  header {
-    padding: 0;
-  }
-  header .right-header {
-    padding: 2rem !important;
-  }
-}
 * {
   margin: 0;
   padding: 0;
@@ -59,7 +51,7 @@ a {
 }
 
 header {
-  height: 100vh;
+  min-height: 100vh;
   color: var(--color-white);
   overflow: hidden;
 }
@@ -178,7 +170,7 @@ section {
 .header-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  height: 100%;
+  min-height: 100vh;
 }
 .header-content .left-header {
   display: flex;
@@ -686,5 +678,108 @@ section {
   }
   70%, 90% {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    padding: 0;
+  }
+  header .right-header {
+    padding: 0 !important;
+  }
+  .theme-btn {
+    width: 50px;
+    height: 50px;
+  }
+  .header-content {
+    grid-template-columns: 1fr;
+    padding-bottom: 6rem;
+  }
+  .left-header .pfp {
+    margin: 0 auto;
+    width: 90%;
+  }
+  .right-header {
+    grid-row: 1;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .right-header .name {
+    font-size: 2.5rem !important;
+  }
+  .abt-container {
+    grid-template-columns: 1fr;
+  }
+  .abt-container .right-about {
+    grid-template-columns: 1fr;
+    padding-top: 2.5rem;
+  }
+  .abt-container .left-about {
+    padding-right: 0;
+  }
+  .abt-container .left-about p {
+    padding-left: 0.5rem;
+  }
+  .timeline {
+    grid-template-columns: 1fr;
+    padding-bottom: 6rem;
+  }
+  .about-stats .proficiency-bars {
+    grid-template-columns: 1fr;
+  }
+  .portfolios {
+    grid-template-columns: 1fr;
+    padding-bottom: 6rem;
+  }
+  .contact-content-con {
+    flex-direction: column;
+  }
+  .contact-content-con .right-contact {
+    margin-left: 0;
+    margin-top: 2.5rem;
+  }
+  .contact-content-con .right-contact .input-control2 {
+    flex-direction: column;
+  }
+  .contact-content-con .right-contact .input-control2 :last-child {
+    margin-left: 0;
+    margin-top: 1.5rem;
+  }
+  .section {
+    padding: 2rem 2.5rem;
+    width: 80%;
+  }
+  .controls {
+    top: auto;
+    bottom: 0;
+    flex-direction: row;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background-color: var(--color-grey-5);
+  }
+  .controls .control {
+    margin: 1rem 0.3rem;
+  }
+  .main-title h2 {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 1070px) {
+  .abt-container {
+    grid-template-columns: 1fr;
+  }
+  .abt-container .right-about {
+    padding-top: 2.5rem;
+  }
+  .portfolios {
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact-content-con {
+    flex-direction: column;
+  }
+  .main-title h2 {
+    font-size: 5rem;
   }
 }/*# sourceMappingURL=styles.css.map */
