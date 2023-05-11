@@ -561,6 +561,7 @@ section{
             margin-top: 1rem;
             font-size: 2rem;
             text-transform: uppercase;
+            color: var(--color-pop);
         }
         p{
             margin: 1rem 0;
@@ -661,6 +662,43 @@ section{
     align-self: flex-start;
     padding-bottom: 1rem;
 }
+
+// Had to restyle specific for a button
+.submit-btn{
+    border-radius: 30px;
+    color: inherit;
+    font-weight: 600;
+    position: relative;
+    border: 1px solid var(--color-secondary);
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--color-primary);
+    background: linear-gradient(to left, var(--color-secondary) 50%, var(--color-primary) 50%);
+    background-size: 200% 100%;
+    background-position: left bottom;
+    transition: all .5s ease-out;
+    .btn-text{
+        padding: 0 2rem;
+        font-family: 'Poppins', sans-serif;    
+        font-size: 1.1rem;
+        color: var(--color-white);
+        transition: all .4s ease-in-out;
+    }
+    .btn-icon{
+        background-color: var(--color-secondary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        padding: 1rem;
+    }
+    &:hover{
+        background-position: right bottom;
+    }
+}
+
 .main-btn{
     border-radius: 30px;
     color: inherit;
@@ -673,6 +711,7 @@ section{
     overflow: hidden;
     .btn-text{
         padding: 0 2rem;
+
     }
     .btn-icon{
         background-color: var(--color-secondary);
