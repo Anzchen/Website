@@ -764,14 +764,15 @@ section{
             -webkit-text-stroke: 0 var(--color-secondary);
             border-right: 2px solid var(--color-secondary);
             overflow: hidden;
-            animation: animate 6s linear infinite;
+            animation: animate 3s linear;
+            animation-fill-mode: forwards;
         }
         @keyframes animate {
-            0%, 10%, 100%
+            0%
             {
                 width: 0;
             }
-            70%, 90%
+            100%
             {
                 width: 100%;
             }
