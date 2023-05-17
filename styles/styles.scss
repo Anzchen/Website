@@ -18,6 +18,7 @@
     --color-grey-5: #2a2e35;
     --color-icon: #DBE2EF;
     --color-pop: #DAA06D;
+    --color-translucent: rgba(255, 255, 255, 0.25);
     --br-sm-2: 14px;
     --box-shadow-1: 0 3px 15px rgba(0, 0, 0, .3);
 }
@@ -35,6 +36,7 @@
     --color-grey-5: #e3e2de;
     --color-icon: #FFFFFF;
     --color-pop: #CD7F32;
+    --color-translucent: rgba(102, 108, 119, 0.65);
     .portfolios{
         .portfolio-item{
             img{
@@ -141,6 +143,7 @@ section{
     .active-btn{
         background-color: var(--color-secondary) !important;
         transition: all .4s ease-in-out;
+        transform: translateY(-5px);
         i{
             color: var(--color-icon) !important;
         }
@@ -436,6 +439,7 @@ section{
             left: -27px;
             top: 0;
             background-color: var(--color-secondary);
+            color: var(--color-icon);
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -777,6 +781,100 @@ section{
                 width: 100%;
             }
         }
+    }
+}
+
+// Rain animations
+.rain {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.rain.back-row {
+    display: block;
+    z-index: -1;
+    bottom: 60px;
+    opacity: 0.5;
+    top: 90px;
+    line-height: 12px;
+    padding-top: 14px;
+}
+
+.drop {
+    position: absolute;
+    bottom: 100%;
+    width: 15px;
+    height: 120px;
+    pointer-events: none;
+    animation: drop 0.5s linear infinite;
+}
+
+@keyframes drop {
+0% {
+    transform: translateY(0vh);
+}
+75% {
+    transform: translateY(90vh);
+}
+100% {
+    transform: translateY(90vh);
+}
+}
+
+.stem {
+    width: 1px;
+    height: 60%;
+    margin-left: 7px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--color-translucent));
+    animation: stem 0.5s linear infinite;
+}
+
+@keyframes stem {
+    0% {
+        opacity: 1;
+    }
+    65% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.splat {
+    top: 20px;
+    width: 15px;
+    height: 10px;
+    border-top: 2px dotted rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    opacity: 1;
+    transform: scale(0);
+    animation: splat 0.5s linear infinite;
+    display: block;
+}
+
+@keyframes splat {
+    0% {
+        opacity: 1;
+        transform: scale(0);
+    }
+    80% {
+        opacity: 1;
+        transform: scale(0);
+    }
+    90% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
     }
 }
 
